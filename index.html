@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .button-container {
+            margin-top: 50px;
+        }
+
+        .pulse-button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #countdown {
+            font-size: 80px;
+            color: #ff4081;
+            font-weight: bold;
+            animation: fadeIn 2s ease-out forwards;
+            margin-top: 30px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #video-container {
+            margin-top: 40px;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        video {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        #message {
+            font-size: 60px;
+            color: #ff4081;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: zoomIn 1.5s ease-out forwards;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        #photo-screen {
+            margin-top: 40px;
+            animation: fadeIn 2s forwards;
+        }
+
+        .photo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-grid img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .balloon {
+            font-size: 60px;
+            animation: floatUp 4s infinite;
+            margin-top: 20px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Button to show the video -->
+    <div class="button-container">
+        <button id="show-video-btn" class="pulse-button">Click to Start the Surprise!</button>
+    </div>
+
+    <!-- Countdown display -->
+    <div id="countdown" class="hidden">
+        <h1 id="countdown-number"></h1>
+    </div>
+
+    <!-- Video element hidden initially -->
+    <div id="video-container" class="hidden">
+        <video id="birthday-video" width="600">
+            <source src="VideoVideo.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Hidden Happy Birthday message -->
+    <div id="message" class="hidden">
+        <h1>Happy Birthday!</h1>
+    </div>
+
+    <!-- Hidden screen with photos and animation after the video -->
+    <div id="photo-screen" class="hidden">
+        <h1>Congratulations on Turning 19 JESSICA LYSMMM - From your fake cousin Sonu !</h1>
+        <div class="photo-grid">
+            <img src="photo1.jpg" alt="Friend Photo 1">
+            <img src="photo2.jpeg" alt="Friend Photo 2">
+            <img src="photo3.jpg" alt="Friend Photo 3">
+        </div>
+        <div class="balloon">
+            🎈
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
